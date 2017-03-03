@@ -1,0 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+	background: #f5f6f8;
+}
+#container {
+    margin: 5em auto;
+    max-width: 700px;
+    display: block;
+    background: #fff;
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 0px #e6e6e6;
+}
+body {
+	font-family: "Myriad Pro", sans-serif;
+	font-size: 14px;
+}
+a {
+	color: #00aee6;
+}
+/**
+ * Stylesheet
+ */
+
+#sharedrive-file-table a {
+	text-decoration: none;
+}
+
+#sharedrive-file-table-table {
+	margin-top: 15px;
+}
+
+.sharedrive-headings {
+	background: #f5f6f7;
+    padding: 15px;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+.sharedrive-headings .sharedrive-headings-th {
+	display: inline-block;
+	width: 20%;
+}
+
+#sharedrive-file-table .sharedrive-title {
+	width: 50%;
+}
+
+#sharedrive-file-table .sharedrive-item {
+	width: 15%;
+	vertical-align: middle;
+}
+
+#sharedrive-file-table .sharedrive-date {
+	width: 20%;
+}
+
+#sharedrive-file-table .sharedrive-owner {
+	width: 5%;
+}
+
+#sharedrive-file-table .sharedrive-item img.avatar {
+	max-width: 100%;
+	width: 32px;
+	height: auto;
+	border-radius: 50%;
+}
+
+#sharedrive-file-table .sharedrive-node-items {
+	padding: 15px;
+}
+#sharedrive-file-table .sharedrive-node-items:nth-child(even) {
+	background: #F8FBFF;
+}
+
+.sd-archive-actions-list {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.sd-archive-actions-list a {
+	color: #777;
+}
+
+.sd-archive-actions-list a span.sd-archive-trash {
+	color: red;
+}
+
+.sd-archive-actions-list-item {
+	margin-right: 5px;
+}
+
+.sharedrive-node-items ul li {
+	display: inline-block;
+}
+
+a.sd-button {
+	background: #FFFFFF;
+    border: 1px solid #BAD5F4;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    border-radius: 2px;
+    padding: 17.5px 15px 15px 15px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
