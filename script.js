@@ -3,10 +3,23 @@ var shareDriveApp = new Vue({
 	data: {
 		jasper: 'Jasper had long hair',
 		files: sdMockData.files,
+		directories: sdMockData.directories,
 		rootClassName: 'hidden',
 		show: false,
+
 		showAddFileForm: false,
-		showFileTable: true
+		addDirectoryFormShow: false,
+		copyFormShow: false,
+		moveFormShow: false,
+		renameFormShow: false,
+
+		showFileTable: true,
+
+		stageFiles: [],
+
+		moveActionSelectedDir: 'ROOT',
+		copyActionSelectedDir: 'ROOT'
+
 	},
 	created: function() {
 		console.log('Instance is created.');
@@ -27,11 +40,12 @@ var shareDriveApp = new Vue({
 			}
 
 			return;	
-			
+
 		},
 		sdAddNewFile: function( event ) {
 			event.preventDefault();
 			this.showAddFileForm = true;
+
 			/**this.files.unshift({ 
 				author:'Joseph', 
 				name: 'dassdasd', 
@@ -47,3 +61,37 @@ var shareDriveApp = new Vue({
 });
 
 shareDriveApp.load();
+
+jQuery(document).ready(function(e){
+
+	var shareDriveHidePrompt = function() {
+
+		shareDriveApp.showAddFileForm = false;
+		shareDriveApp.addDirectoryFormShow = false;
+		shareDriveApp.copyFormShow = false;
+		shareDriveApp.moveFormShow = false;
+		shareDriveApp.renameFormShow = false;
+
+		return;
+	}
+
+	$('body').on( 'click', '.sd-directory-prompt', function(e){
+     	//Do nothing if .header was not directly clicked
+     	
+	    if ( e.target !== e.currentTarget ) {
+	    	return;
+	    }
+
+	    shareDriveHidePrompt();
+		
+	});
+
+	$(document).keyup(function(e) {
+	    if (e.keyCode == 27) {
+	       shareDriveHidePrompt();
+	    }
+	});
+
+	return;
+
+});
