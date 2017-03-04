@@ -8,59 +8,74 @@
 <div id="container">
 	<div id="sharedrive-file-table">
 
-		 <div>
-			<a class="sd-button button" href="#" v-on:click="sdAddNewFile($event)">
-				Add New File
-			</a>
+		<div id="sharedrive-global-actions">
+
+			<div id="shareDriveNewObjectActions">
+				<a class="sd-button button" href="#" v-on:click="sdAddNewFile($event)">
+					 New File
+				</a>
+				<a class="sd-button button" href="#" v-on:click.prevent="addDirectoryFormShow=true">
+					 New Directory
+				</a>
+			</div>
+
+			<div id="shareDriveObjectActions">
+				<transition name="fade">
+					<a v-if="stageFiles.length>=1" class="sd-button button" href="#" v-on:click.prevent="copyFormShow=true">
+						Copy
+					</a>
+				</transition>
+				<transition name="fade">
+					<a v-if="stageFiles.length>=1" class="sd-button button" href="#" v-on:click.prevent="moveFormShow=true">
+						Move
+					</a>
+				</transition>
+				<transition name="fade">
+					<a v-if="stageFiles.length>=1" class="sd-button button" href="#" v-on:click.prevent="">
+						Trash
+					</a>
+				</transition>
+			</div>
+
+			<div class="clearfix"></div>
+			
 		</div>
 
-		<div id="sd-section-form-add-backdrop">
-			<div id="sd-section-form-add" v-if="showAddFileForm">
-				
+		<div id="sd-section-form-add-backdrop" v-if="showAddFileForm" class="sd-directory-prompt">
+			<div id="sd-section-form-add" class="sd-directory-prompt-wrap">
 				<?php require_once 'templates/form-add.php'; ?>
-				
 			</div>
 		</div>
-	
+
+		<div id="sd-section-form-add-directory-backdrop" v-if="addDirectoryFormShow" class="sd-directory-prompt">
+			<div id="sd-section-form-directory-add" class="sd-directory-prompt-wrap">
+				<?php require_once 'templates/form-add-directory.php'; ?>
+			</div>
+		</div>
+		
+		<div id="sd-section-form-copy-backdrop" v-if="copyFormShow" class="sd-directory-prompt">
+			<div id="sd-section-form-copy-add" class="sd-directory-prompt-wrap">
+				<?php require_once 'templates/form-copy.php'; ?>
+			</div>
+		</div>
+
+		<div id="sd-section-form-move-backdrop" v-if="moveFormShow" class="sd-directory-prompt">
+			<div id="sd-section-form-move" class="sd-directory-prompt-wrap">
+				<?php require_once 'templates/form-move.php'; ?>
+			</div>
+		</div>
+
+		<div id="sd-section-form-rename-backdrop" v-if="renameFormShow" class="sd-directory-prompt">
+			<div id="sd-section-form-rename" class="sd-directory-prompt-wrap">
+				<?php require_once 'templates/form-rename.php'; ?>
+			</div>
+		</div>
+
 		<div v-if="showFileTable" class="hidden" v-bind:class="rootClassName">
 
 			<div id="sharedrive-file-table-table" v-if="files.length >= 1">
-
-				<div class="sharedrive-headings">
-					<h3 class="sharedrive-title sharedrive-headings-th">Name</h3>
-					<h3 class="sharedrive-item sharedrive-date sd-date sharedrive-headings-th">Date</h3>
-					<h3 class="sharedrive-item sharedrive-scope sd-scope sharedrive-headings-th">Scope</h3>
-					<h3 class="sharedrive-item sharedrive-owner sd-ower sharedrive-headings-th">Owner</h3>
-				</div>
-
-				<transition-group name="fade">
-					<div class="sharedrive-node-items" v-bind:key="file" v-for="(file, key) in files">
-						<ul>
-							<li class="sharedrive-title">
-								<a class="sd-file-archive-title" href="#">
-									{{file.name}}
-								</a>
-								<div class="sd-archive-actions">
-									<ul class="sd-archive-actions-list">
-										<li class="sd-archive-actions-list-item"><a href="#">Move</a></li>
-										<li class="sd-archive-actions-list-item"><a href="#">Copy</a></li>
-										<li class="sd-archive-actions-list-item"><a href="#">Rename</a></li>
-										<li class="sd-archive-actions-list-item">
-											<a href="#" v-on:click="sdAppDelete(key, $event)">
-												<span class="sd-archive-trash">Trash</span></a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="sharedrive-item sharedrive-date">{{file.date}}</li>
-							<li class="sharedrive-item">{{file.scope}}</li>
-							<li class="sharedrive-item sharedrive-owner" v-html="file.avatar"></li>
-						</ul>
-					</div>
-				</transition>
-
+				<?php require_once 'templates/file-listing.php'; ?>
 			</div>
-
 			<div v-if="files.length === 0">
 				There are no files
 			</div>
