@@ -5,7 +5,6 @@
 	<p class="description">Adding new file under "*Root Directory"</p>
 </div>
 
-
 <div id="sharedrive-form-add-file-wrap">
 	<form id="sharedrive-form-add-file" method="POST">
 		<!--Upload File-->
