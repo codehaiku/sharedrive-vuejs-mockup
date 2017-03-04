@@ -129,6 +129,15 @@ a {
 #sharedrive-file-table .sharedrive-item {
 	width: 15%;
 	vertical-align: middle;
+	display: inline-block;
+}
+
+#sharedrive-file-table .sd-checkbox {
+	width: 2.5%;
+}
+
+#sharedrive-file-table .sharedrive-item.sd-checkbox input[type=checkbox] {
+	margin-top: -4px;
 }
 
 #sharedrive-file-table .sharedrive-date {
@@ -153,48 +162,30 @@ a {
 	background: #F8FBFF;
 }
 
-.sd-file-archive-title,
-.sd-archive-actions {
-	transition: all 0.25s ease-in-out;
-	-moz-transition: all 0.25s ease-in-out;
-	-webkit-transition: all 0.25s ease-in-out;
-}
-
-.sd-file-archive-title {
-  
-}
-
-.sd-archive-actions {
-	opacity: 0;
-	position: absolute;
-	transform: translateY(-12.25px);
-
-}
-
-
-#sharedrive-file-table .sharedrive-node-items:hover .sd-archive-actions {
-	opacity: 1;
-	transform: translateY(-3.25px);
-}
-.sd-archive-actions-list {
-	margin-top: 10px;
-	font-size: 12px;
-}
-
-.sd-archive-actions-list a {
-	color: #777;
-}
-
-.sd-archive-actions-list a span.sd-archive-trash {
-	color: red;
-}
-
-.sd-archive-actions-list-item {
-	margin-right: 5px;
-}
-
 .sharedrive-node-items ul li {
 	display: inline-block;
+}
+
+#shareDriveNewObjectActions {
+	float: left;
+}
+#shareDriveObjectActions {
+	float: right;
+}
+
+.clearfix {
+	display: block;
+	clear: both;
+}
+
+.sharedrive-menu ul {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 9px;
+}
+.sharedrive-menu li.sharedrive-menu-item{
+	float: left;
+	margin-right: 10px;
 }
 
 /** Add Form */
@@ -204,37 +195,44 @@ h3#sd-form-title {
 	margin-bottom: 1.5em;
 }
 
-#sharedrive-form-add-file .input-group {
+.sd-directory-prompt .input-group {
 	margin: 15px 0;
 }
 
-#sharedrive-form-add-file .input-group .description {
+.sd-directory-prompt  .input-group .description {
 	margin-left: 20px;
 	margin-top: 5px;
 	opacity: 0.65;
 	font-size: 12px;
 }
 
-#sharedrive-form-add-file input[type=text],
-#sharedrive-form-add-file textarea {
+.sd-directory-prompt input[type=text], 
+.sd-directory-prompt  textarea {
 	width: 100%;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-#sd-section-form-add {
-	position: absolute;
+
+.sd-directory-prompt-wrap {
     background: #fff;
-    top: 0px;
-    left: 61px;
     padding: 20px;
-    box-shadow: 0 5px 15px 0px #e0e0e0;
+    box-shadow: 0 5px 15px 0px #000000;
     border: 1px solid #eee;
     border-radius: 4px;
-    margin: 0;
+    width: 500px;
     z-index: 20;
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
 }
 
-#sd-section-form-add-backdrop {
-
+.sd-directory-prompt {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    left: 0px;
+    background: rgba(0,0,0,0.80);
+    z-index: 30;
 }
