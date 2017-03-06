@@ -45,14 +45,6 @@ var shareDriveApp = new Vue({
 		sdAddNewFile: function( event ) {
 			event.preventDefault();
 			this.showAddFileForm = true;
-
-			/**this.files.unshift({ 
-				author:'Joseph', 
-				name: 'dassdasd', 
-				date: '11/24/2016 4:24 PM', 
-				scope: 'Public', 
-				avatar: '<img class="avatar" src="avatars/1.jpg" alt="Joseph Gabito" />'
-			});**/
 		},
 		load: function() {
 			this.rootClassName = 'show';
@@ -60,8 +52,16 @@ var shareDriveApp = new Vue({
 	}
 });
 
-shareDriveApp.load();
+Vue.directive('sdchosen', {
+	inserted: function(el) {
+		jQuery(el).chosen();
+	}
+});
 
+shareDriveApp.load();
+/**
+ * ------------------------------------------------//JQUERY//-------------------------------------------------------------------------------------------------------------
+ */
 jQuery(document).ready(function(e){
 
 	var shareDriveHidePrompt = function() {
@@ -95,3 +95,4 @@ jQuery(document).ready(function(e){
 	return;
 
 });
+
