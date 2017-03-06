@@ -2,7 +2,7 @@
 <form method="POST" action="">
 	<div class="input-group">
 		<label for="sdCopyDirectory">Select a directory</label>
-		<select v-model="copyActionSelectedDir" name="directory" id="sdCopyDirectory">
+		<select v-sdchosen class="shareDriveSelect" v-model="copyActionSelectedDir" name="directory" id="sdCopyDirectory">
 			<option v-for="directory in directories">{{directory.name}}</option>
 		</select>
 	</div>
