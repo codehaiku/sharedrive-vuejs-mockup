@@ -3,6 +3,8 @@
 <head>
 	<title>Dunhakdis: Vue JS 101</title>
 	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<link rel="stylesheet" href="chosen.min.css" type="text/css"/>
+	<link rel="stylesheet" href="font-awesome.min.css" type="text/css"/>
 </head>
 <body>
 <div id="container">
@@ -38,7 +40,7 @@
 			</div>
 
 			<div class="clearfix"></div>
-			
+
 		</div>
 
 		<div id="sd-section-form-add-backdrop" v-if="showAddFileForm" class="sd-directory-prompt">
@@ -89,4 +91,5 @@
 <script src="jquery.js"></script>
 <script src="mock.js"></script>
 <script src="script.js"></script>
+<script src="chosen.jquery.min.js"></script>
 </html>
