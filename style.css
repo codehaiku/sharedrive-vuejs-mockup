@@ -133,7 +133,7 @@ a {
 }
 
 #sharedrive-file-table .sd-checkbox {
-	width: 2.5%;
+	width: 5%;
 }
 
 #sharedrive-file-table .sharedrive-item.sd-checkbox input[type=checkbox] {
@@ -236,3 +236,22 @@ h3#sd-form-title {
     background: rgba(0,0,0,0.80);
     z-index: 30;
 }
+
+/**
+ * Icons
+ */
+.sharedrive-node-items li a:before {
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    content: "\f0f6";
+    margin-right: 5px;
+}
+
+.sharedrive-node-items li a.folder:before { content: "\f07b"; }
+.sharedrive-node-items li a.zip:before { content: "\f1c6"; }
+.sharedrive-node-items li a.image:before { content: "\f1c5"; }
